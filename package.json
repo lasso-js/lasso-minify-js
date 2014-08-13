@@ -33,6 +33,6 @@
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
     },
-    "version": "0.1.0-beta",
-    "main": "raptor-optimizer-minify-js-plugin.js"
+    "main": "raptor-optimizer-minify-js-plugin.js",
+    "version": "0.1.1-beta"
 }
