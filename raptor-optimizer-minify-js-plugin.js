@@ -17,18 +17,20 @@ function minify(src, options) {
     return uglify.gen_code(ast);
 }
 
-module.exports = {
-    contentType: 'js',
+module.exports = function (pageOptimizer, pluginConfig) {
+    pageOptimizer.config.addTransform({
+        contentType: 'js',
 
-    name: module.id,
+        name: module.id,
 
-    stream: false,
+        stream: false,
 
-    transform: function(code, contentType, dependency, bundle) {
-        var minified = minify(code);
-        if (minified.length && !minified.endsWith(";")) {
-            minified += ";";
+        transform: function(code, contentType, dependency, bundle) {
+            var minified = minify(code);
+            if (minified.length && !minified.endsWith(";")) {
+                minified += ";";
+            }
+            return minified;
         }
-        return minified;
-    }
+    });
 };
