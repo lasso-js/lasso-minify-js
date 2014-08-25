@@ -3,7 +3,7 @@
     "description": "Transform for the RaptorJS Optimizer to minify JavaScript using UglifyJS",
     "keywords": [
         "raptor-optimizer",
-        "raptor-optimizer-transform",
+        "raptor-optimizer-plugin",
         "js",
         "minify"
     ],
