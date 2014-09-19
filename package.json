@@ -1,15 +1,15 @@
 {
-    "name": "raptor-optimizer-minify-js",
+    "name": "optimizer-minify-js",
     "description": "Transform for the RaptorJS Optimizer to minify JavaScript using UglifyJS",
     "keywords": [
-        "raptor-optimizer",
-        "raptor-optimizer-plugin",
+        "optimizer",
+        "optimizer-plugin",
         "js",
         "minify"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/raptorjs3/raptor-optimizer-minify-js.git"
+        "url": "https://github.com/raptorjs3/optimizer-minify-js.git"
     },
     "scripts": {
         "test": "node_modules/.bin/jshint *.js"
@@ -33,6 +33,6 @@
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
     },
-    "main": "raptor-optimizer-minify-js-plugin.js",
-    "version": "1.0.1-beta"
+    "main": "optimizer-minify-js-plugin.js",
+    "version": "1.1.0"
 }
