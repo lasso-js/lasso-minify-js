@@ -25,7 +25,7 @@ module.exports = function (pageOptimizer, pluginConfig) {
 
         stream: false,
 
-        transform: function(code, contentType, context, bundle) {
+        transform: function(code, optimizerContext) {
             try {
                 var minified = minify(code);
                 if (minified.length && !minified.endsWith(";")) {
@@ -34,7 +34,7 @@ module.exports = function (pageOptimizer, pluginConfig) {
                 return minified;
             } catch(e) {
                 if (e.line) {
-                    var dependency = context.dependency;
+                    var dependency = optimizerContext.dependency;
                     console.error('Unable to minify the following code for ' + dependency + ' at line '  + e.line + ' column '+ e.col + ':\n' +
                                   '------------------------------------\n' +
                                   code + '\n' +
