@@ -17,8 +17,8 @@ function minify(src, options) {
     return uglify.gen_code(ast);
 }
 
-module.exports = function (pageOptimizer, pluginConfig) {
-    pageOptimizer.addTransform({
+module.exports = function (lasso, pluginConfig) {
+    lasso.addTransform({
         contentType: 'js',
 
         name: module.id,
