@@ -25,7 +25,7 @@ module.exports = function (pageOptimizer, pluginConfig) {
 
         stream: false,
 
-        transform: function(code, optimizerContext) {
+        transform: function(code, lassoContext) {
             try {
                 var minified = minify(code);
                 if (minified.length && !minified.endsWith(";")) {
@@ -34,7 +34,7 @@ module.exports = function (pageOptimizer, pluginConfig) {
                 return minified;
             } catch(e) {
                 if (e.line) {
-                    var dependency = optimizerContext.dependency;
+                    var dependency = lassoContext.dependency;
                     console.error('Unable to minify the following code for ' + dependency + ' at line '  + e.line + ' column '+ e.col + ':\n' +
                                   '------------------------------------\n' +
                                   code + '\n' +
