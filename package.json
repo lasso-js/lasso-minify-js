@@ -1,6 +1,6 @@
 {
     "name": "lasso-minify-js",
-    "description": "Transform for the RaptorJS Optimizer to minify JavaScript using UglifyJS",
+    "description": "Transform for the Lasso.js to minify JavaScript using UglifyJS",
     "keywords": [
         "lasso",
         "lasso-plugin",
