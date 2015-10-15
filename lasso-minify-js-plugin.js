@@ -1,20 +1,10 @@
-var parser = require("uglify-js").parser;
-var uglify = require("uglify-js").uglify;
+var UglifyJS = require("uglify-js");
 
 function minify(src, options) {
-    if (!options) {
-        options = {};
-    }
+    options = options || {};
+    options.fromString = true;
 
-    var ast = parser.parse(src, options.strict_semicolons === true);
-
-    if (options.lift_variables === true) {
-        ast = uglify.ast_lift_variables(ast);
-    }
-
-    ast = uglify.ast_mangle(ast, options);
-    ast = uglify.ast_squeeze(ast, options);
-    return uglify.gen_code(ast);
+    return UglifyJS.minify(src, options).code;
 }
 
 module.exports = function (lasso, pluginConfig) {
@@ -27,7 +17,7 @@ module.exports = function (lasso, pluginConfig) {
 
         transform: function(code, lassoContext) {
             try {
-                var minified = minify(code);
+                var minified = minify(code, pluginConfig);
                 if (minified.length && !minified.endsWith(";")) {
                     minified += ";";
                 }
