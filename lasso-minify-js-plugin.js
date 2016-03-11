@@ -29,7 +29,7 @@ module.exports = function (lasso, pluginConfig) {
                                   '------------------------------------\n' +
                                   code + '\n' +
                                   '------------------------------------\n');
-                    throw new Error('JavaScript minification error for ' + dependency + ': ' + e.message + ' (line ' + e.line + ', col ' + e.col + ')');
+                    return code;
                 } else {
                     throw e;
                 }
